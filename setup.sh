@@ -1,7 +1,7 @@
 #! /bin/bash  -xue
 
-box_name='centos7-develop'
-box_version='v1.2.0'
+box_name='rocky9-develop'
+box_version='v1.0.0'
 box_file="${box_name}.${box_version}.box"
 
 # Account Name of Vagrant Cloud.
