@@ -7,6 +7,7 @@
 ##    Load Modules
 ##
 
+load  File.expand_path('common/CommonCustomize.rb')
 load  File.expand_path('common/UploadFiles.rb')
 
 
@@ -17,20 +18,13 @@ load  File.expand_path('common/UploadFiles.rb')
 
 Vagrant.configure("2") do |config|
   config.vm.box = "rockylinux/9"
+  customize_config(config)
 
   config.vm.provider "virtualbox" do |v|
     v.name   = "vagrant-box-rocky9-develop"
     v.memory = "1024"
 
-    v.customize [
-      "modifyvm",           :id,
-      "--hwvirtex",         "on",
-      "--nestedpaging",     "on",
-      "--largepages",       "on",
-      "--ioapic",           "on",
-      "--pae",              "on",
-      "--paravirtprovider", "kvm",
-    ]
+    customize_vm_provider(v)
   end
 
   config.vm.synced_folder(".", "/vagrant", disabled: true)
@@ -45,6 +39,8 @@ end
 # Provisioning(s)
 
 Vagrant.configure("2") do |config|
+  customize_config(config)
+
   provision_upload_files(config.vm)
 end
 
