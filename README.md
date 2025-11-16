@@ -1,14 +1,14 @@
-# vagrant-box-centos7-develop
+# vagrant-box-rocky9-develop
 
-基本的な開発環境をインストールした CentOS 7.7
+基本的な開発環境をインストールした Rocky 9
 
 ## ボックスを自前で作成する
 
 ### クローン
 
 ```bash
-git clone https://gitlab.com/takahiro-itou/vagrant-box-centos7-develop.git
-cd  vagrant-box-centos7-develop
+git clone https://gitlab.com/takahiro-itou/vagrant-box-rocky9-develop.git
+cd  vagrant-box-rocky9-develop
 ```
 
 ### ボックス作成
@@ -20,11 +20,11 @@ cd  vagrant-box-centos7-develop
 ### 作成したボックスを登録する。
 
 ```bash
-vagrant box add  --name <yourname>/centos7-develop  centos7-develop.v1.2.0.box
+vagrant box add  --name <yourname>/rocky9-develop  rocky9-develop.v1.0.0.box
 ```
 
 ## 作成済みのボックスをダウンロードして使う
 
-takahiro-itou/centos7-develop
-- https://app.vagrantup.com/takahiro-itou/boxes/centos7-develop
+takahiro-itou/rocky9-develop
+- https://app.vagrantup.com/takahiro-itou/boxes/rocky9-develop
 
